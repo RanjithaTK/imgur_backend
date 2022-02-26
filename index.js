@@ -1,3 +1,4 @@
+const cors =require("cors")
 const express=require("express")
 const mongoose = require("mongoose")
 const app=express()
@@ -6,7 +7,7 @@ app.use(express.json())  // parse requests of content-type - application/json
 app.use(express.urlencoded({       // parse requests of content-type - application/x-www-form-urlencoded
     extended: true
   }));
-
+app.use(cors())
 // const user= require("./router/userRouter")
 // user(app)
 require("./router/userRouter")(app)            //while importing we have to give some argument bcz we r importing some function
