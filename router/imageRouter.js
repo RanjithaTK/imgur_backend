@@ -3,7 +3,7 @@ const verifyToken = require("../middleware/auth")
 const router = (app)=>{
     app.post("/images",verifyToken,ImageControl.addImage)
     app.delete("/images/:id",verifyToken,ImageControl.deleteImage)
-    app.get("/images",verifyToken,ImageControl.getAllImage)
+    app.get("/images",ImageControl.getAllImage)
     app.get("/images/:id",verifyToken,ImageControl.getImageById)
     app.get("/images/:id/like",verifyToken,ImageControl.toggleLike)
     app.get("/myimages",verifyToken,ImageControl.getMyImage)
